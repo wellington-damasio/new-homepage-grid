@@ -1,0 +1,451 @@
+:root {
+/* -------------------------------------------
+                    Colors
+------------------------------------------- */
+    --primary: hsl(240, 100%, 5%);
+    --primary-dark: hsl(36, 100%, 99%);
+    --secondary: hsl(236, 13%, 42%);
+    --secondary-dark: hsl(233, 8%, 79%);
+    --accent-primary: hsl(5, 85%, 63%);
+    --accent-secondary: hsl(35, 77%, 62%);
+
+
+/* -------------------------------------------
+                   Typography
+------------------------------------------- */
+    --primary-font: 'Inter';
+    /* Font Wheights */
+    --fw-regular: 400 ;
+    --fw-medium: 700;
+    --fw-bold: 800;
+    /* Font Sizes and Line Height */
+    --fs-body: 0.93rem;
+    --lh-body: 26px;
+
+    --fs-xl: 3.5rem;
+    --lh-xl: 56px;
+
+    --fs-l: 2.5rem;
+    --lh-l: 40px;
+
+    --fs-m: 2rem;
+    --lh-m: 32px;
+
+    --fs-s: 1.25rem;
+    --lh-s: 24px;
+
+    --fs-xs: 1.125rem;
+    --lh-xs: 26px;
+}
+
+/* -------------------------------------------
+                    Resets
+------------------------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------------------------------
+                     Base
+------------------------------------------- */
+body {
+    background-color: var(--primary-dark);
+    color: var(--secondary);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container,
+header {
+    max-width: 1450px;
+}
+
+/* -------------------------------------------
+                    Header
+------------------------------------------- */
+header {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+header > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    width: 100%;
+}
+
+header > nav > button {
+    margin-left: auto;
+}
+
+header > nav > ul {
+    display: none;
+}
+
+/* -------------------------------------------
+                  Mobile Menu
+------------------------------------------- */
+.mobile-menu-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60vw;
+    max-width: 20rem;
+    padding: 2rem 1.5rem;
+    background-color: var(--primary-dark);
+    transition: right 400ms ease-out;
+}
+
+.mobile-menu > button {
+    margin-left: auto;
+    margin-bottom: 6rem;
+}
+
+.mobile-menu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.mobile-menu > ul > li > a {
+    font-size: var(--fs-s);
+    color: var(--primary);
+}
+
+.show {
+    right: 0;
+}
+
+.hide {
+    right: -100%;
+}
+
+.zIndex-1000 {
+    z-index: 1000;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+/* -------------------------------------------
+                  Main News
+------------------------------------------- */
+.main-news {
+    margin-bottom: 4rem;
+}
+
+.main-news .img {
+    margin-bottom: 1.5rem;
+}
+
+.main-news > h1 {
+    font-size: var(--fs-l);
+    line-height: var(--lh-l);
+    margin-bottom: 1rem;
+}
+
+.main-news > p {
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------
+               New News (Aside)
+------------------------------------------- */
+aside {
+    background-color: var(--primary);
+    color: var(--primary-dark);
+    padding-block: 1.5rem;
+    margin-bottom:  4rem;
+}
+
+aside > * {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+aside > h3 {
+    font-size: var(--fs-m);
+    line-height: var(--lh-m);
+    color: var(--accent-secondary);
+    margin-bottom: 2rem;
+}
+
+aside > article:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-dark);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+aside > article h2 {
+    font-size: var(--fs-s);
+    line-height: var(--lh-s);
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+aside > article > p {
+    color: var(--secondary-dark);
+}
+
+/* -------------------------------------------
+               More News (Footer)
+------------------------------------------- */
+
+footer > .card {
+    display: grid;
+    grid-template-columns: 36% 1fr;
+    grid-template-rows: repeat(2, auto)  1fr; 
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer > .card > .img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+footer > .card:first-child > .img {
+    background-image: url('../assets/images/image-retro-pcs.jpg');
+}
+
+footer > .card:nth-child(2) > .img {
+    background-image: url('../assets/images/image-top-laptops.jpg');
+}
+
+footer > .card:last-child > .img {
+    background-image: url('../assets/images/image-gaming-growth.jpg');
+}
+
+footer > .card > .ranking {
+    font-size: var(--fs-m);
+    line-height: var(--lh-m);
+    font-weight: var(--fw-medium);
+    color: var(--secondary-dark);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+footer > .card h2 {
+    font-size: var(--fs-xs);
+    line-height: var(--lh-xs);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+footer > .card > .text {
+    align-self: end;
+    grid-column: 2 / 3;
+    grid-row: 3 /4;
+}
+
+/* -------------------------------------------
+                    Button
+------------------------------------------- */
+.btn {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 4.38px;
+    font-weight: var(--fw-medium);
+    background-color: var(--accent-primary);
+    color: var(--primary-dark);
+    padding: 1.1em 2em;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}
+
+/* -------------------------------------------
+                Media Queries
+------------------------------------------- */
+@media screen and (min-width: 750px) and (max-width: 999px){
+    footer > .card {
+        min-height: 12rem;
+    }
+
+    footer > .card > .ranking {
+        font-size: var(--fs-l);
+        line-height: var(--fs-l);
+    }
+
+    footer > .card h2 {
+        font-size: var(--fs-m);
+        line-height: var(--lh-m);
+    }
+
+    footer > .card > .text {
+        align-self: start;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    header > nav > ul{
+        display: flex;
+        gap: 1.4rem;
+        margin-left: auto;
+    }
+
+    header > nav > ul > li > a {
+        color: var(--secondary);
+    }
+
+    header > nav > ul > li:hover > a {
+        color: var(--accent-primary);
+    }
+
+    nav > button {
+        display: none;
+    }
+
+    aside > article h2:hover {
+        color: var(--accent-secondary);
+    }
+
+    footer > .card h2:hover {
+        color: var(--accent-primary);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 5fr 1fr;
+        grid-template-areas: 
+        'main-news main-news aside'
+        'main-news main-news aside'
+        'main-news main-news aside'
+        'main-news main-news aside'
+        'footer footer footer';
+        row-gap: 4rem;
+    }
+
+    .container > * {
+        margin-bottom: 0;
+    }
+
+    .container > .main-news {
+        grid-area: main-news;
+
+        /* This creates a gap with the aside without making the layout disjunct */
+        padding-right: 2rem;
+    }
+
+    .container > aside {
+        grid-area: aside;
+    }
+
+    .main-news {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto) 1fr;
+    }
+
+    .main-news > picture {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .main-news h1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+        font-size: var(--fs-xl);
+        line-height: var(--lh-xl);
+        font-weight: var(--fw-bold);
+    }
+
+    .main-news button {
+        justify-self: start;
+        align-self: center;
+    }
+
+    aside {
+        display: grid;
+        grid-template-rows: auto repeat(3, 1fr);
+        align-items: center;
+    }
+
+    aside > * {
+        margin-bottom: 0;
+    }
+
+    aside > h3 {
+        font-size: var(--fs-l);
+        line-height: var(--lh-l);
+    }
+
+    footer  {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        grid-area: footer;
+    }
+
+    footer > * {
+        margin-bottom: 0;
+    }
+}
